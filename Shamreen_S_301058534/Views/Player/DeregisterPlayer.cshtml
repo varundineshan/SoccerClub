@@ -1,0 +1,48 @@
+﻿@model Shamreen_S_301058534.Models.Player
+@{
+    ViewData["Title"] = "Deregister Player";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+
+}
+
+<h3> De-Register Player Form</h3>
+<form asp-controller="Player" asp-action="DeregisterPlayer" method="post">
+    <div class="form-group row text-center">
+        <label asp-for="First_Name" class="col-sm-2 col-form-label">
+            First Name:
+        </label>
+        <div class="col-sm-9">
+            <input asp-for="First_Name" id="First_Name" class="form-control border-dark" placeholder="First Name" />
+        </div>
+
+    </div>
+    <div class="form-group row text-center ">
+        <label asp-for="Last_Name" class="col-sm-2 col-form-label">
+            Last Name:
+        </label>
+
+        <div class="col-sm-9">
+            <input asp-for="Last_Name" class="form-control border-dark" id="Last_Name" placeholder=" Last Name" />
+        </div>
+    </div>
+    <div class="form-group row text-center">
+        <label asp-for="Club_Name" class="col-sm-2 col-form-label">
+
+            Club Name:
+        </label>
+        <div class="col-sm-9">
+            <input asp-for="Club_Name" id="Club_Name" class="form-control border-dark " placeholder="Club Name" />
+        </div>
+    </div>
+    <div class="text-center ">
+        <button type="submit" class="btn btn-success btn-block">Delete Player</button>
+
+        <button type="submit" asp-controller="Home" asp-action="Index" class="btn btn-danger btn-block">Cancel</button>
+    </div>
+
+
+
+
+
+</form>

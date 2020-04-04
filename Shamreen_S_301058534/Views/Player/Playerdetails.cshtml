@@ -1,0 +1,39 @@
+﻿@model IEnumerable<Player>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Register Player";
+}
+    <table class="table table-hover table-light table-responsive table-bordered">
+        <thead>
+            <tr>
+                
+                <th scope="col">First Name</th>
+                <th scope="col">Last Name</th>
+                <th scope="col">Position</th>
+
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (var p in Model)
+            {
+            <tr>
+
+                <td> @p.First_Name </td>
+                <td> @p.Last_Name </td>
+                <td>@p.Player_Position</td>
+            </tr>
+
+                    }
+                
+            </tbody>
+        </table>
+        <div class="text-center">
+            <a asp-controller="Club" asp-action="Clublist"
+               class="btn btn-dark btn-lg btn-block"> Back</a>
+
+        </div>
+
+
+

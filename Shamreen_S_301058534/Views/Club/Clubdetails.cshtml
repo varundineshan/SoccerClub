@@ -1,0 +1,47 @@
+﻿@model Shamreen_S_301058534.Models.Club
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Club Details";
+}
+
+<div class="row justify-content-center m-3 ">
+    <div class="col-sm-8">
+        <div class="card">
+            <div class="card-header text-center text-uppercase">
+                <h1> @Model.Name </h1>
+            </div>
+            <div class="card-body text-center">
+                <img src="~/Img/SOCCER CLUB.jpg" class="card-img-top " style="width: 15rem;" />
+                <div>
+                    <p> @Model.Club_Description</p>
+                </div>
+                <div class="text-center  ">
+                    <ul class="list-group">
+                        <li class="list-group-item">Club Owner  : @Model.Club_Owner</li>
+                        <li class="list-group-item">Club Manager: @Model.Club_Manger</li>
+                        <li class="list-group-item">Club Value  : @Model.Club_Value.ToString("c")</li>
+                    
+                    </ul>
+                    
+                 
+                </div>
+
+
+
+
+
+                <div class="card-footer text-center ">
+                    <a asp-controller="Player" asp-action="Playerdetails" asp-route-id="@Model.Id" class="btn btn-dark btn-block">Click here to view the list of register players</a>
+                    <a asp-controller="Club" asp-action="Clublist" class="btn btn-dark btn-block">Back</a>
+                    <a asp-controller="Club" asp-action="Update" asp-route-id="@Model.Id" class="btn btn-dark btn-block">Edit</a>
+                    <a asp-controller="Club" asp-action="Delete" asp-route-id="@Model.Id" class="btn btn-dark btn-block">Delete</a>
+                    <a asp-controller="Player" asp-action="ManagePlayer" asp-route-id="@Model.Id" class="btn btn-dark btn-block">Add Players</a>
+
+
+
+                </div>
+                    </div>
+                </div>
+            </div>
+

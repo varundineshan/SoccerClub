@@ -1,0 +1,17 @@
+﻿@{
+    ViewData["Title"] = "Manage Players";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="text-muted">
+    <p> Here you can manage the players list in accordance with the clubs</p>
+</div>
+
+
+<div class="row">
+    <div class="col-sm-8 "><h2>Manage Players</h2></div>
+    <div class="col-sm-4 ">
+        <a asp-controller="Player" asp-action="AddPlayer" class="btn btn-dark add-new">Add Player</a>
+        <a asp-controller="Player" asp-action="ReassignPlayer" class="btn btn-dark reassign">Re-assign</a>
+        <a asp-controller="Player" asp-action="DeregisterPlayer" class="btn btn-dark add-new">De-register</a>
+    </div>
+</div>

@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link rel="icon" href="~/img/favicon.png">
+    <link rel="stylesheet" href="~/css/bootstrap.min.css">
+    <link href="~/lib/bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/css/style.css">
+    <script src="~/lib/bootstrap/js/bootstrap.js"></script>
+    <script src="~/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+        <div class="container">
+            <a class="navbar-brand" asp-controller="Home" asp-action="Index">
+
+                <img style="max-width:55px; margin-top: -7px;"
+                     src="~/Img/SOCCER CLUB.jpg"> Soccer Club
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+
+                    <li class="nav-item">
+                        <a class="nav-link active" asp-controller="Home" asp-action="Index">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a asp-controller="Club" asp-action="Clublist" class="nav-link">Clubs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a asp-controller="Club" asp-action="Addclub" class="nav-link">Add Clubs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a asp-controller="Club" asp-action="Clubdetails" class="nav-link"> Club Details</a>
+                    </li>
+
+
+
+                    <li class="nav-item">
+                        <a asp-controller="Player" asp-action="ManagePlayer" class="nav-link">Manage Players</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-sm btn-primary" asp-action="Logout" asp-controller="Account">Log Out</a>
+                    </li>
+</ul>
+            </div>
+        </div>
+    </nav>
+
+
+
+
+    @RenderBody()
+
+
+
+
+
+
+
+
+</body>
+</html>

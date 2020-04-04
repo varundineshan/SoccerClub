@@ -1,0 +1,29 @@
+﻿@model IEnumerable<Club>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Clublist";
+}
+
+
+
+
+
+<div class="card-deck row-cols-sm-5">
+    @foreach (var c in Model)
+    {
+        <div class="m-3">
+            <div class="card-header text-capitalize text-center">
+                <h3>@c.Name</h3>
+            </div>
+
+            <img src="~/Img/SOCCER CLUB.jpg" class="card-img-top" />"
+            <div class="card-footer text-center">
+                <a asp-controller="Club" asp-action="Clubdetails" asp-route-id="@c.Id"
+                   class="btn btn-dark btn-lg btn-block"> Details</a>
+
+            </div>
+
+        </div>
+    }
+</div>

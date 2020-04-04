@@ -1,0 +1,64 @@
+﻿@model Shamreen_S_301058534.Models.Player
+@{
+    ViewData["Title"] = "AddPlayer";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+
+}
+
+
+<h3> Player Form </h3>
+<form asp-controller="Player" asp-action="AddPlayer" method="post">
+    <div class="form-group row text-center">
+        <label asp-for="First_Name" class="col-sm-2 col-form-label">
+            First Name:
+        </label>
+        <div class="col-sm-9">
+            <input asp-for="First_Name" id="First_Name" class="form-control border-dark" placeholder="First Name" />
+        </div>
+
+    </div>
+    <div class="form-group row text-center ">
+        <label asp-for="Last_Name" class="col-sm-2 col-form-label">
+            Last Name:
+        </label>
+
+        <div class="col-sm-9">
+            <input asp-for="Last_Name" class="form-control border-dark" id="Last_Name" placeholder=" Last Name" />
+        </div>
+
+    </div>
+    <div class="form-group row text-center ">
+        <label asp-for="Player_Age" class="col-sm-2 col-form-label">
+            Player Age:
+        </label>
+        <div class="col-sm-9">
+            <input asp-for="Player_Age" id="Player_Age" class="form-control border-dark" placeholder=" Player Age" />
+
+        </div>
+
+    </div>
+    <div class="form-group row text-center">
+        <label asp-for="Player_Position" class="col-sm-2 col-form-label">
+            Club Position:
+        </label>
+        <div class="col-sm-9">
+            <input asp-for="Player_Position" id=" Player_Position" class="form-control  border-dark" placeholder="Player_Position" />
+
+        </div>
+    </div>  <div class="form-group row text-center">
+        <label asp-for="ClubId" class="col-sm-2 col-form-label">
+
+            Club Name:
+        </label>
+        <div class="col-sm-9">
+            <select asp-for="ClubId" asp-items="@( new SelectList(ViewBag.Clubs,"Id","Name"))"> </select>
+        </div>
+
+    </div>
+        <div class="text-center ">
+            <button type="submit" class="btn btn-success btn-block">Save</button>
+
+            <button type="submit" asp-controller="Home" asp-action="Index" class="btn btn-danger btn-block">Cancel</button>
+        </div>
+</form>

@@ -1,0 +1,21 @@
+﻿@model Shamreen_S_301058534.Models.Club
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Update Club";
+}
+
+<div class="text-center text-dark ">
+    <h4>UPDATE CLUB</h4>
+</div>
+<form asp-controller="Club" asp-action="Update" method="post">
+
+    @Html.Partial("AddClubPartialView")
+
+
+    <div class="text-center ">
+        <button type="submit" class="btn btn-success btn-block">Save</button>
+
+        <button type="submit" asp-controller="Home" asp-action="Index" class="btn btn-danger btn-block">Cancel</button>
+    </div>
+</form>
