@@ -27,7 +27,8 @@ namespace Shamreen_S_301058534
             services.AddDbContext<AppIdentityDbContext>(options => options.UseSqlServer(Configuration["Data:SportClubIdentity:ConnectionString"]));
             services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<AppIdentityDbContext>().AddDefaultTokenProviders();
             services.AddMvc();
-            services.AddSingleton <IClubRepository, EFClubRepository>();
+            services.AddSingleton<IClubRepository, EFClubRepository>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

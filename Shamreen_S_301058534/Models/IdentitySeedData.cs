@@ -16,8 +16,11 @@ namespace Shamreen_S_301058534.Models
         public static async void EnsurePopulated(IApplicationBuilder app)
         {
             UserManager<IdentityUser> userManager = app.ApplicationServices.GetRequiredService<UserManager<IdentityUser>>();
+            AppIdentityDbContext context = app.ApplicationServices
+                .GetRequiredService<AppIdentityDbContext>();
+            context.Database.Migrate();
             IdentityUser user = await userManager.FindByIdAsync(adminUser);
-            Console.Write("3134243243524234343242342342343243432434343243dsfdsfdfsdfd"+user);
+            
             if (user == null) 
             { 
                 user = new IdentityUser("Proj"); 
