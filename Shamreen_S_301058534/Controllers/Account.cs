@@ -24,11 +24,10 @@ namespace Shamreen_S_301058534.Controllers
         public async Task<IActionResult> Login(LoginModel loginModel)
         {
             if (ModelState.IsValid) { IdentityUser user = await userManager.FindByNameAsync(loginModel.Name);
-                Console.WriteLine("#$@#%@#%@#%@#%#@%@#%#@%@#%@#%#@%@%@#%#@%#%@#%#%#@%#@%#@%#@%_____------" + loginModel.Name + "////" + loginModel.Password+"user:"+user);
 
                 if (user != null) { await signInManager.SignOutAsync(); 
                     if ((await signInManager.PasswordSignInAsync(user, loginModel.Password, false, false)).Succeeded)
-                    { return Redirect(loginModel?.ReturnUrl ?? "/Admin/Index");
+                    { return Redirect(loginModel?.ReturnUrl ?? "/Home/Index");
                     } 
                 } 
             }
@@ -37,5 +36,7 @@ namespace Shamreen_S_301058534.Controllers
         public async Task<RedirectResult> Logout(string returnUrl = "/") { 
             await signInManager.SignOutAsync(); 
             return Redirect(returnUrl); }
+       
+        
     }
 }

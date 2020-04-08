@@ -44,25 +44,23 @@
                     <li class="nav-item">
                         <a asp-controller="Player" asp-action="ManagePlayer" class="nav-link">Manage Players</a>
                     </li>
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <li class="nav-item">
+                           <li class="nav-item"> Welcome @User.Identity.Name </li>
+                    <a class="btn btn-sm btn-primary" asp-action="Logout" asp-controller="Account">Log Out</a>
+                        </li>
+                    }
+                    else
+                    {
                     <li class="nav-item">
-                        <a class="btn btn-sm btn-primary" asp-action="Logout" asp-controller="Account">Log Out</a>
+                        <a class="btn btn-sm btn-primary" asp-action="Login" asp-controller="Account">Log In</a>
                     </li>
-</ul>
+                    }
+                </ul>
             </div>
         </div>
     </nav>
-
-
-
-
     @RenderBody()
-
-
-
-
-
-
-
-
 </body>
 </html>
